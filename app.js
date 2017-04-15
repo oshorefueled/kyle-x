@@ -1,9 +1,11 @@
 var express = require('express');
 var app = express();
+var http = require('http').Server(app);
 var port = process.env.PORT || 3000;
 
-app.listen(port);
-console.log('listening on port %s', port);
+http.listen(function () {
+   console.log('listening on port %s', port)
+});
 
 
 app.get('/', function (req, res) {
