@@ -1,24 +1,16 @@
 var express = require('express');
-var http = require('http');
 var app = express();
 var port = process.env.PORT || 3000;
-var server = http.createServer();
+
+app.listen(port);
+console.log('listening on port %s', port);
+
+
+app.get('/', function (req, res) {
+   res.send('Hi, I\'m Kyle');
+});
 
 var bot = require("./app/module/actions");
-
-
-var myArray = [3,5,1,2,5,3];
-
-
-app.set(port);
-
-server.listen(port);
-server.on('listening', function () {
-   console.log('listening on port %s', port);
-});
-server.on('error', function (err) {
-    console.error(err);
-});
 
 
 
